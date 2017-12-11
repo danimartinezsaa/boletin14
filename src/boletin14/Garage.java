@@ -14,14 +14,13 @@ import javax.swing.JOptionPane;
 public class Garage{
     private int numeroCoches;
     private final int plazas=5;
-    Coche coche=new Coche();
 
     //Constructor
     public Garage(){
     }
 
-    public Garage(String matricula){
-        coche.setMatricula(matricula);
+    public Garage(int numeroCoches){
+        this.numeroCoches=numeroCoches;
     }
 
     //Getters and Setters
