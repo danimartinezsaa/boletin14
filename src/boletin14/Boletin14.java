@@ -18,7 +18,7 @@ public class Boletin14{
      */
     public static void main(String[] args){
         String[] opciones={"Añadir","Retirar","Salir"};
-        Garage garage=new Garage();
+        Garage garaje=new Garage();
         Coche coches[]=new Coche[6];
         
         coches[0]=new Coche();
@@ -34,32 +34,32 @@ public class Boletin14{
             int opcion=JOptionPane.showOptionDialog(null, "Añada o retire coche", "Garage", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, null);
             if(opcion==0){
                 boolean b=false;
-                String a=JOptionPane.showInputDialog("Inserte matrícula:");
-                for(byte i=0;i<=coches.length;i++){
-                    try{
-                        if(coches[i].getMatricula()==null){
-                            coches[i].setMatricula(a);
-                            garage.añadirCoche();
-                            b=true;
-                            break;
-                            }
-                        }catch(Exception ex1){
+                
+                try{
+                    for(byte i=0;i<garaje.getPlazas();i++){
+                            if(coches[i].getMatricula()==null){
+                                String a=JOptionPane.showInputDialog("Inserte matrícula:");
+                                coches[i].setMatricula(a);
+                                garaje.añadirCoche();
+                                b=true;
+                                break;
+                                }    
+                    }
+                }catch(Exception ex1){
                             JOptionPane.showMessageDialog(null,"Matrícula existente.");
                             break;
                             }
-                }
-                
                 if(b==false) JOptionPane.showMessageDialog(null, "Garage Lleno, espere.");
                 else JOptionPane.showMessageDialog(null, "Coche dentro!");
                 
             }else if (opcion==1){
                 boolean c=false;
                 String b=JOptionPane.showInputDialog("Inserte matrícula: ");
-                for(byte i=0;i<=coches.length;i++){
+                for(byte i=0;i<=garaje.getPlazas();i++){
                     try{
                         if(coches[i].getMatricula().equals(b)){
                             coches[i].setMatricula(null);
-                            garage.retirarCoche();
+                            garaje.retirarCoche();
                             c=true;
                             break;
                         }
