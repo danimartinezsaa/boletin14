@@ -11,20 +11,46 @@ package boletin14;
  */
 public class Coche{
     private String matricula;
+    private long tiempoE,tiempoS,tiempo;
     
     public Coche(){
     }
     
-    public Coche(String matricula){
+    public Coche(String matricula, long tiempoE, long tiempoS,long tiempo){
         this.matricula=matricula;
+        this.tiempoE=tiempoE;
     }
 
     public String getMatricula(){
         return matricula;
     }
+    
+    public long getTiempoE(){
+        return tiempoE;
+    }
 
+    public long getTiempoS(){
+        return tiempoS;
+    }
+
+    public long getTiempo(){
+        return tiempo;
+    }
+    
     public void setMatricula(String matricula){
         this.matricula=matricula;
+    }
+
+    public void setTiempoE(long tiempoE){
+        this.tiempoE=tiempoE;
+    }
+
+    public void setTiempoS(long tiempoS){
+        this.tiempoS=tiempoS;
+    }
+
+    public void setTiempo(long tiempo){
+        this.tiempo=tiempo;
     }
 
     @Override

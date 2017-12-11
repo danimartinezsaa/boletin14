@@ -23,9 +23,19 @@ public class Boletin14{
         while (true){
             int opcion=JOptionPane.showOptionDialog(null, "Añada o retire coche", "Garage", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, null);
             if(opcion==0){
-                garaje.añadirCoche();
+                try{
+                    garaje.añadirCoche();
+                }catch(Exception ex1){
+                    JOptionPane.showMessageDialog(null, "Error, dato no válido.");
+                }
             }else if (opcion==1){
-                garaje.retirarCoche();
+                try{
+                    garaje.retirarCoche();
+                    garaje.factura();
+                }catch(Exception ex2){
+                    JOptionPane.showMessageDialog(null, "Error, dato no válido.");
+                }
+                
             }else break;
         
         }
