@@ -18,7 +18,7 @@ public class Boletin14{
      */
     public static void main(String[] args){
         String[] opciones={"Añadir","Retirar","Salir"};
-        Garage garaje=new Garage();
+        Garaje garaje=new Garaje();
         Coche coches[]=new Coche[6];
         
         coches[0]=new Coche();

@@ -11,15 +11,15 @@ import javax.swing.JOptionPane;
  *
  * @author dani
  */
-public class Garage{
+public class Garaje{
     private int numeroCoches;
     private final int plazas=5;
 
     //Constructor
-    public Garage(){
+    public Garaje(){
     }
 
-    public Garage(int numeroCoches){
+    public Garaje(int numeroCoches){
         this.numeroCoches=numeroCoches;
     }
 
