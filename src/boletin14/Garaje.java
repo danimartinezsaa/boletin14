@@ -15,9 +15,9 @@ public class Garaje{
     private int numeroCoches=0;
     private final int PLAZAS=5;
     private String mat;
-    byte inicio=0,aux,aux2;
+    byte inicio=0,aux,aux2,aux3=1;
     
-    Coche coches[]=new Coche[6];
+    Coche coches[]=new Coche[5];
         
 
     //Constructor
@@ -49,7 +49,7 @@ public class Garaje{
     //program
     public void añadirCoche(){
         if(inicio==0){
-            for(byte i=0;i<6;i++){
+            for(byte i=0;i<5;i++){
                 coches[i]=new Coche("0");
             }
             inicio=1;
@@ -88,15 +88,18 @@ public class Garaje{
                         numeroCoches=numeroCoches-1;
                         aux=i;
                         JOptionPane.showMessageDialog(null, "Coche fuera!");
-                    break;
-                    } else{
-                        JOptionPane.showMessageDialog(null, "La matrícula no existe.");
-                        mat=null;
+                        aux3=0;
+                        break;
                     }
                 }catch(Exception ex2){
                     break;
                 }
             }
+            if(aux3==1){
+                        JOptionPane.showMessageDialog(null, "La matrícula no existe.");
+                        mat=null;
+                        aux=1;
+                    }
             aux2=1;
         }
     }
