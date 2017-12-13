@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class Garaje{
     private int numeroCoches=0;
-    private final int plazas=5;
+    private final int PLAZAS=5;
     private String mat;
     byte inicio=0,aux,aux2;
     
@@ -34,7 +34,7 @@ public class Garaje{
     }
 
     public int getPlazas(){
-        return plazas;
+        return PLAZAS;
     }
 
     public void setNumeroCoches(int numeroCoches){
@@ -43,7 +43,7 @@ public class Garaje{
 
     @Override
     public String toString(){
-        return "numeroCoches="+numeroCoches+" numeroPlazas="+plazas;
+        return "numeroCoches="+numeroCoches+" numeroPlazas="+PLAZAS;
     }
     
     //program
@@ -55,8 +55,8 @@ public class Garaje{
             inicio=1;
         }
 
-        if(numeroCoches<plazas){
-            for(byte i=0;i<plazas;i++){
+        if(numeroCoches<PLAZAS){
+            for(byte i=0;i<PLAZAS;i++){
                 if(coches[i].getMatricula().equals("0")){
                     coches[i].setMatricula(JOptionPane.showInputDialog("Inserte matrícula:"));
                     coches[i].setTiempoE(System.currentTimeMillis());
@@ -66,7 +66,7 @@ public class Garaje{
                     break;
                 }
             }
-        }else if(numeroCoches==plazas) {
+        }else if(numeroCoches==PLAZAS) {
             JOptionPane.showMessageDialog(null, "Garaje Lleno, no puede entrar.");
         }
         
@@ -79,7 +79,7 @@ public class Garaje{
             aux2=0;
         } else {
             mat=JOptionPane.showInputDialog("Inserte matrícula: ");
-            for(byte i=0;i<plazas;i++){
+            for(byte i=0;i<PLAZAS;i++){
                 try{
                     if(coches[i].getMatricula().equals(mat)){
                         coches[i].setMatricula("0");
