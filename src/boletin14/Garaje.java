@@ -96,17 +96,17 @@ public class Garaje{
                 }
             }
             if(aux3==1){
-                        JOptionPane.showMessageDialog(null, "La matrícula no existe.");
-                        mat=null;
-                        aux=1;
-                    }
+                JOptionPane.showMessageDialog(null, "La matrícula no existe.");
+                mat=null;
+                aux3=1;
+            }
             aux2=1;
         }
     }
     
     public void factura(){
         double total=0,dinero=0;
-        if(mat!=null && aux2==1){
+        if(aux3!=1 && aux2==1){
             if(coches[aux].getTiempo()<10){
                 total=1.5;
             } else{
