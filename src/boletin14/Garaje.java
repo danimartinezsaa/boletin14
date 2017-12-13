@@ -49,21 +49,19 @@ public class Garaje{
     //program
     public void añadirCoche(){
         if(inicio==0){
-            coches[0]=new Coche();
-            coches[1]=new Coche();
-            coches[2]=new Coche();
-            coches[3]=new Coche();
-            coches[4]=new Coche();
-            coches[5]=new Coche();
+            for(byte i=0;i<6;i++){
+                coches[i]=new Coche("0");
+            }
             inicio=1;
         }
 
         if(numeroCoches<plazas){
             for(byte i=0;i<plazas;i++){
-                if(coches[i].getMatricula()==null){
+                if(coches[i].getMatricula().equals("0")){
                     coches[i].setMatricula(JOptionPane.showInputDialog("Inserte matrícula:"));
                     coches[i].setTiempoE(System.currentTimeMillis());
                     numeroCoches++;
+                    
                     JOptionPane.showMessageDialog(null, "Coche dentro!");
                     break;
                 }
@@ -84,12 +82,12 @@ public class Garaje{
             for(byte i=0;i<plazas;i++){
                 try{
                     if(coches[i].getMatricula().equals(mat)){
-                    coches[i].setMatricula(null);
-                    coches[i].setTiempoS(System.currentTimeMillis());
-                    coches[i].setTiempo((coches[i].getTiempoS()-coches[i].getTiempoE())/1000);
-                    numeroCoches=numeroCoches-1;
-                    aux=i;
-                    JOptionPane.showMessageDialog(null, "Coche fuera!");
+                        coches[i].setMatricula("0");
+                        coches[i].setTiempoS(System.currentTimeMillis());
+                        coches[i].setTiempo((coches[i].getTiempoS()-coches[i].getTiempoE())/1000);
+                        numeroCoches=numeroCoches-1;
+                        aux=i;
+                        JOptionPane.showMessageDialog(null, "Coche fuera!");
                     break;
                     } else{
                         JOptionPane.showMessageDialog(null, "La matrícula no existe.");

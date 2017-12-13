@@ -16,6 +16,9 @@ public class Coche{
     public Coche(){
     }
     
+    public Coche(String matricula){
+        this.matricula=matricula;
+    }
     public Coche(String matricula, long tiempoE, long tiempoS,long tiempo){
         this.matricula=matricula;
         this.tiempoE=tiempoE;
